@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Referral View</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+    <link rel="stylesheet" href="Referral.css">
+</head>
+<body>
+    <div class="grid-container">
+
+        <header class="header">
+            <div class="menu-icon" onclick="openSidebar()">
+                <span class="material-icons-outlined">menu</span>
+            </div>
+            <div class="header-left">
+                <h3>Referral</h3> 
+            </div>
+            <div class="header-right">
+                <div class="dropdown" id="profileDropdown">
+                    <span class="material-icons-outlined account-icon" onclick="toggleProfileDropdown()">account_circle</span>
+                    <div class="dropdown-content">
+                        <a href="#">Profile</a>
+                        <a href="#">Settings</a>
+                        <a href="#">Logout</a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <aside id="sidebar">
+            <div class="sidebar-title">
+                <div class="sidebar-brand">
+                    Management
+                </div>
+                <span class="material-icons-outlined" onclick="toggleDropdown()">close</span>
+            </div>
+
+            <ul class="sidebar-list">
+                <li class="sidebar-list-item">
+                    <span class="material-icons-outlined">home</span><a href="Adviser.html">Home</a>
+                </li>
+                <li class="sidebar-list-item">
+                    <span class="material-icons-outlined">inventory</span><a href="Referral.html">Referral</a>
+                </li>
+            </ul>
+        </aside>
+
+        <main class="main-container">
+            <div class="logo">
+                <img src="stcathlogo.png" alt="">
+            </div>
+            <div class="main-cards">
+                <div class="card">
+                    <div class="find">
+                        <div class="search">
+                            <span class="material-icons-outlined">search</span>
+                            <input type="text" id="searchInput" placeholder="Search">
+                        </div>
+                    </div>
+                        <table class="student-list">
+                            <thead>
+                                <tr>
+                                    <th>ID NUMBER</th>
+                                    <th>NAME</th>
+                                    <th>CONTACT NO.</th>
+                                    <th>GRADE</th>
+                                    <th>REFERRAL</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>20221202</td>
+                                    <td>Calabucal, Jennylyn A.</td>
+                                    <td>09301750922</td>
+                                    <td>5</td>
+                                    <td>Submitted</td>
+                                    <td class="more"><span class="material-icons-outlined" onclick="toggleRowDropdown(this)">more_vert</span>
+                                        <div class="view">
+                                            <a href="#">View Referral</a>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <button class="add">
+                        <span class="material-icons-outlined">add</span>
+                    </button>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <script src="Referral.js"></script>
+</body>
+</html>
