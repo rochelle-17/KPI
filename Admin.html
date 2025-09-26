@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>KPI(ADMIN)</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+  <link rel="stylesheet" href="admin.css"/>
+</head>
+
+
+<body>
+
+  <aside class="sidebar" onclick="openSidebar()">
+    <ul>
+      <li>
+        <a href="#" id="homeLink">
+          <i class="bx bxs-home-alt-2"></i>
+          <span class="label">Home</span>
+        </a>
+      </li>
+      <li>
+        <a href="#" id="referralLink">
+          <i class="bxr  bxs-user-circle" ></i> 
+          <span class="label">Referral</span>
+        </a>
+      </li>
+      <li>
+        <a href="#" id="recordLink">
+          <i class="bx bxs-file-blank"></i>
+          <span class="label">Record</span>
+        </a>
+      </li>
+      <li>
+        <a href="#" id="settingsLink">
+          <i class="bx bxs-cog"></i>
+          <span class="label">Settings</span>
+        </a>
+      </li>
+    </ul>
+  </aside>
+
+
+   
+  <div class="topbar">
+    <div class="logo">
+      <img src="stcathlogo.png" alt="Logo"/>
+    </div>
+   <div class="header-right">
+      <span class="material-icons-outlined account-icon" onclick="toggleDropdown()">account_circle</span>
+          <div class="dropdown" id="profileDropdown">
+            <a href="#">Profile</a>
+            <a href="#">Settings</a>
+            <a href="#">Logout</a>
+          </div>
+        </div>
+  </div>
+
+
+  <main>
+   <section id="HomeSection">
+     <div class="controls">
+      <h2 class="title">TOTAL REFFERALS</h2>
+      <div class="selectors">
+        
+      <select> 
+        <option value="ELEM">ELEM</option>
+        <option value="JHS">JHS</option>
+        <option value="SHS">SHS</option>
+      </select>
+
+      <select>
+        <option value="1st">1st</option>
+        <option value="2nd">2nd</option>
+        <option value="3rd">3rd</option>
+        <option value="4th">4th</option>
+      </select>
+      </div>
+     </div>
+
+    <div class="summary">
+      <div class="card">ELEM<span>5</span></div>
+      <div class="card">JHS<span>14</span></div>
+      <div class="card active">SHS<span>9</span></div>
+    </div>
+
+     <div class="content">
+      <!-- Left side -->
+      <div class="left">
+        <div class="tabs">
+          <button class="active">ALL</button>
+          <button>ELEM</button>
+          <button>JHS</button>
+          <button>SHS</button>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>ID NUMBER</th>
+              <th>NAME</th>
+              <th>LEVEL</th>
+              <th>STATUS</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>20221930</td>
+              <td>SAN PEDRO IMAW</td>
+              <td>SHS</td>
+              <td>Active</td>
+            </tr>
+            <tr>
+              <td>20221931</td>
+              <td>JUAN DELA CRUZ</td>
+              <td>JHS</td>
+              <td>Inactive</td>
+            </tr>
+            <tr>
+              <td>20221932</td>
+              <td>MARIA CLARA</td>
+              <td>ELEM</td>
+              <td>Active</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="right">
+        <iframe 
+  title="Power BI Report" 
+  width="300" 
+  height="200" 
+  src="https://app.powerbi.com/view?r=eyJrIjoiY2M...longtoken..." 
+  frameborder="0">
+</iframe>
+      </div>
+   </section>
+
+
+   <section id="ReferralSection" style="display: none;">
+    <h1>Referral</h1>
+    <p>Referral content here...</p>
+   </section>
+  </div>
+   <section id="RecordSection" style="display: none;">
+    <div class="top-bar">
+      <input type="text" placeholder="Search.." class="search-bar"/>
+      <select>
+        <option>SY</option>
+      </select>
+      <select>
+        <option>Level</option>
+      </select>
+      <div class="admin-info">
+      <span style="font-size: 24px;">👤</span>
+      <i class="bx bxs-user-cirle"></i>
+      <span>Admin</span>
+    </div>
+  </div>
+      <table class="record-table">
+      <thead>
+        <tr>
+          <th>ID NUMBER</th>
+          <th>NAME</th>
+          <th>CONTACT NO.</th>
+          <th>DATE</th>
+          <th>GRADE</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>20221930</td>
+          <td>SAN PEDRO IMAW</td>
+          <td>09273619901</td>
+          <td>03/16/25</td>
+          <td>10</td>
+        </tr>
+      </tbody>
+
+         <tbody>
+        <tr>
+          <td>20221204</td>
+          <td>CEPEDA, ROCHELLE</td>
+          <td>09935624200</td>
+          <td>02/12/25</td>
+          <td>12</td>
+        </tr>
+      </tbody>
+    </table>
+    </table>
+    </div>
+
+
+    <button class="add-btn">+</button>
+   </section>
+
+   <section id="SettingsSection" style="display: none;">
+    <h1>Settings</h1>
+    <p>Settings content here...</p>
+   </section>
+  </main>
+
+  <script src="admin.js"></script>
+</body>
+</html>
