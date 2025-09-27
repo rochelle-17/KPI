@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Referral Entry</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+  <link rel="stylesheet" href="Adviser_Form.css">
+</head>
+<body>
+  <button id="addNewBtn" class="add-btn">Add New +</button>
+
+  <!-- ===== POP-UP MARK-UP ===== -->
+  <div id="referralPopup" class="popup-overlay">
+    <div class="popup-box">
+      <span class="close-btn" id="closeBtn">&times;</span>
+
+      <h2>Referral Details</h2>
+
+      <form id="referralForm" class="referral-form">
+        <label>Last Name      
+          <input type="text" name="lastName"   required>
+        </label>
+        <label>First Name     
+          <input type="text" name="firstName"  required>
+        </label>
+        <label>Middle Name    
+          <input type="text" name="middleName">
+        </label>
+
+        <div class="two-col">
+          <label>Grade
+            <select name="grade" required>
+              <option value="" disabled selected>Select</option>
+              <option>7</option><option>8</option><option>9</option>
+              <option>10</option><option>11</option><option>12</option>
+            </select>
+          </label>
+
+          <label>Section <input type="text" name="section" required></label>
+        </div>
+
+        <label>Gender
+          <select name="gender" required>
+            <option value="" disabled selected>Select</option>
+            <option>Male</option><option>Female</option><option>Other</option>
+          </select>
+        </label>
+
+        <label>ID Number    
+          <input type="text" name="idNumber"   required>
+        </label>
+        <label>Contact No.  
+          <input type="tel"  name="contactNo"  required>
+        </label>
+        <label>Submitted By 
+          <input type="text" name="submittedBy" required>
+        </label>
+
+        <label>Reason for Referral
+          <textarea name="reason" required>
+          </textarea>
+        </label>
+
+        <div class="actions">
+          <button type="submit" class="save-btn">Save Referral</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="Adviser_Form.js"></script>
+</body>
+</html>

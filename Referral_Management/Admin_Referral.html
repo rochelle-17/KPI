@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Referral</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+    <link rel="stylesheet" href="Admin_Referral.css">
+</head>
+<body>
+    <div class="grid-container">
+        <header class="header">
+          <div class="menu-icon" onclick="openSidebar()">
+            <span class="material-icons-outlined">menu</span>
+          </div>
+          <div class="header-left">
+            <h3>Referral</h3> 
+          </div>
+          <div class="header-right">
+            <div class="dropdown" id="profileDropdown">
+              <span class="material-icons-outlined account-icon" onclick="toggleDropdown()">account_circle</span>
+              <div class="dropdown-content">
+                <a href="#">Profile</a>
+                <a href="#">Settings</a>
+                <a href="#">Logout</a>
+              </div>
+            </div>
+          </div>
+        </header>
+
+        <aside id="sidebar">
+          <div class="sidebar-title">
+            <div class="sidebar-brand">
+              Management
+            </div>
+            <span class="material-icons-outlined" onclick="closeSidebar()">close</span>
+          </div>
+
+          <ul class="sidebar-list">
+            <li class="sidebar-list-item">
+              <span class="material-icons-outlined">analytics</span> <a href="Admin_Dashboard.html">Dashboard</a>
+            </li>
+            <li class="sidebar-list-item">
+              <span class="material-icons-outlined">book</span><a href="Admin_StudentProfile.html">Student Profile</a>
+            </li>
+            <li class="sidebar-list-item">
+              <span class="material-icons-outlined">inventory</span><a href="Admin_Referral.html">Referral</a>
+            </li>
+          </ul>
+        </aside>
+
+        <main class="main-container">
+            <div class="logo">
+                <img src="stcathlogo.png" alt="Logo">
+            </div>
+            <div class="main-cards">
+                
+            </div>
+        </main>
+      <script src="Admin_Referral.js"></script>  
+    </div>
+</body>
+</html>

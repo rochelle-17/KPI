@@ -1,0 +1,112 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adviser's View</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+  <link rel="stylesheet" href="Adviser.css">
+</head>
+<body>
+  <div class="grid-container">
+    <!-- Header -->
+    <header class="header">
+      <div class="menu-icon" onclick="openSidebar()">
+        <span class="material-icons-outlined">menu</span>
+      </div>
+      <div class="header-left">
+        <h3>Home</h3> 
+      </div>
+      <div class="header-right">
+        <div class="dropdown" id="profileDropdown">
+          <span class="material-icons-outlined account-icon" onclick="toggleDropdown()">account_circle</span>
+          <div class="dropdown-content">
+            <a href="#">Profile</a>
+            <a href="#">Settings</a>
+            <a href="#">Logout</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Sidebar -->
+    <aside id="sidebar">
+          <div class="sidebar-title">
+            <div class="sidebar-brand">
+              Management
+            </div>
+            <span class="material-icons-outlined" onclick="closeSidebar()">close</span>
+          </div>
+
+          <ul class="sidebar-list">
+            <li class="sidebar-list-item active">
+              <span class="material-icons-outlined">home</span> <a href="Adviser.html">Home</a>
+            </li>
+            <li class="sidebar-list-item">
+              <span class="material-icons-outlined">inventory</span><a href="Referral.html">Referral</a>
+            </li>
+          </ul>
+        </aside>
+
+    <!-- Main -->
+    <main class="main-container">
+      <div class="logo">
+        <img src="stcathlogo.png" alt="Logo">
+      </div>
+      <div class="main-cards">
+        <!-- Left card -->
+        <div class="card-inner-left">
+          <div class="titles">
+            <h2>Performance Timelines</h2> 
+          </div>
+          <div class="table-container">
+            <table class="performances">
+              <thead>
+                <tr>
+                  <th>Student Name</th>
+                  <th>Grade</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Cepeda, Rochelle Jane B.</td>
+                  <td>1</td>
+                  <td><span class="status submitted">Submitted</span></td>
+                </tr>
+                <tr>
+                  <td>Delmonte, Joanna Rose L.</td>
+                  <td>2</td>
+                  <td><span class="status submitted">Submitted</span></td>
+                </tr>
+                <tr>
+                  <td>Lobendino, Joshua N.</td>
+                  <td>3</td>
+                  <td><span class="status submitted">Submitted</span></td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th colspan="3">Total: <span class="entries">40</span> entries</th>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+        </div>
+
+        <div class="card-inner-right">
+          <div class="tips-viewer">
+            <h3>Study Tips</h3>
+            <p>     Stay consistent, not perfect.<br>
+                    Take short breaks for focus.<br>
+                    Ask for help when needed.</p>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+  <script src="Adviser.js"></script>
+</body>
+</html>
+
