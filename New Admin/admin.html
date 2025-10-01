@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Portal - Management System</title>
+    <link rel="stylesheet" href="Style.css">
+</head>
+<body>
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+        <div class="logo-container">
+            <div class="logo-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                </svg>
+            </div>
+            <div class="logo-text">
+                <div class="logo-title">Admin Portal</div>
+                <div class="logo-subtitle">Management System</div>
+            </div>
+        </div>
+
+        <nav class="nav-menu">
+            <div class="nav-section-title">NAVIGATION</div>
+            <a href="#" class="nav-item active">
+                <svg class="nav-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                </svg>
+                <div class="nav-text">
+                    <div class="nav-title">Dashboard</div>
+                    <div class="nav-subtitle">Analytics and overview</div>
+                </div>
+            </a>
+            <a href="#" class="nav-item">
+                <svg class="nav-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                </svg>
+                <div class="nav-text">
+                    <div class="nav-title">Student Profiles</div>
+                    <div class="nav-subtitle">Manage student data</div>
+                </div>
+            </a>
+            <a href="#" class="nav-item">
+                <svg class="nav-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                </svg>
+                <div class="nav-text">
+                    <div class="nav-title">Referrals</div>
+                    <div class="nav-subtitle">Track and manage referrals</div>
+                </div>
+            </a>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Header -->
+        <header class="header">
+            <h1 class="page-title">Dashboard</h1>
+            <div class="user-profile">
+                <img src="" alt="User Profile" class="profile-image">
+            </div>
+        </header>
+
+        <!-- Dashboard Content -->
+        <div class="dashboard-content">
+            <div class="welcome-section">
+                <h2 class="welcome-title">Welcome back, Jennylyn Calabucal</h2>
+                <p class="welcome-subtitle">Here's an overview of your referral management system</p>
+            </div>
+
+            <!-- Stats Grid -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-label">Total Referrals</div>
+                    <div class="stat-value">0</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Elementary</div>
+                    <div class="stat-value">0</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Junior High School</div>
+                    <div class="stat-value">0</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Senior High School</div>
+                    <div class="stat-value">0</div>
+                </div>
+            </div>
+
+            <!-- Detailed Level Cards Section -->
+            <div class="level-cards-section">
+                <div class="level-card">
+                    <div class="level-header">
+                        <h3 class="level-title">Elementary</h3>
+                        <span class="level-badge">0 referrals</span>
+                    </div>
+                    <p class="level-empty-state">No referrals for this level</p>
+                </div>
+
+                <div class="level-card">
+                    <div class="level-header">
+                        <h3 class="level-title">Junior High School</h3>
+                        <span class="level-badge">0 referrals</span>
+                    </div>
+                    <p class="level-empty-state">No referrals for this level</p>
+                </div>
+
+                <div class="level-card">
+                    <div class="level-header">
+                        <h3 class="level-title">Senior High School</h3>
+                        <span class="level-badge">0 referrals</span>
+                    </div>
+                    <p class="level-empty-state">No referrals for this level</p>
+                </div>
+            </div>
+
+            <!-- Recent Referrals Section with Filter Tabs -->
+            <div class="recent-referrals-section">
+                <h3 class="section-title">Recent Referrals</h3>
+                <div class="filter-tabs">
+                    <button class="filter-tab active" data-filter="all">All</button>
+                    <button class="filter-tab" data-filter="elementary">Elementary</button>
+                    <button class="filter-tab" data-filter="junior">Junior High School</button>
+                    <button class="filter-tab" data-filter="senior">Senior High School</button>
+                </div>
+                <div class="referrals-content">
+                    <p class="empty-state">No referrals to display</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
