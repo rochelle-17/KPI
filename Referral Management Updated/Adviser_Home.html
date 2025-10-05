@@ -1,0 +1,120 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adviser's View</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+  <link rel="stylesheet" href="Adviser_Home.css">
+</head>
+<body>
+
+  <aside class="sidebar">
+        <div class="logo-container">
+            <div class="logo-icon">
+                <span class="material-symbols-outlined">home</span>
+            </div>
+            <div class="logo-text">
+                <div class="logo-title">Adviser Portal</div>
+                <div class="logo-subtitle">Management System</div>
+            </div>
+        </div>
+
+        <nav class="nav-menu">
+            <div class="nav-section-title">NAVIGATION</div>
+            <a href="Adviser_Home.html" class="nav-item active">
+                <span class="material-symbols-outlined">home</span>
+                <div class="nav-text">
+                    <div class="nav-title">Home</div>
+                    <div class="nav-subtitle">Timelines and Tips</div>
+                </div>
+            </a>
+            <a href="Adviser_Referral.html" class="nav-item">
+                <span class="material-symbols-outlined">article</span>
+                <div class="nav-text">
+                    <div class="nav-title">Referrals</div>
+                    <div class="nav-subtitle">Track and manage referrals</div>
+                </div>
+            </a>
+        </nav>
+    </aside>
+
+    <!-- Main -->
+    <main class="main-content">
+      <header class="header">
+            <h1 class="page-title">Adviser Portal</h1>
+            <div class="user-profile">
+              <div class="dropdown" id="profileDropdown">
+                  <img src="your-profile.jpg" 
+                       alt="User Profile" 
+                       class="profile-image account-icon" 
+                       id="profileButton">
+                  <div class="dropdown-content">
+                    <a href="#"><span class="material-symbols-outlined">manage_accounts</span>Profile Settings</a>
+                    <a href="#"><span class="material-symbols-outlined">logout</span>Logout</a>
+                  </div>
+                </div>
+            </div>
+          </header>
+
+           <div class="dashboard-content">
+            <div class="welcome-section">
+                <h2 class="welcome-title">Welcome back, Jennylyn Calabucal</h2>
+                <p class="welcome-subtitle">Here's an overview of your timelines and tips</p>
+            </div>
+
+      <div class="main-cards">
+        <!-- Left card -->
+        <div class="card-inner-left">
+          <div class="titles">
+            <h2>Performance Timelines</h2> 
+          </div>
+          <div class="table-container">
+            <table class="performances">
+              <thead>
+                <tr>
+                  <th>Student Name</th>
+                  <th>Grade</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Cepeda, Rochelle Jane B.</td>
+                  <td>1</td>
+                  <td><span class="status submitted">Submitted</span></td>
+                </tr>
+                <tr>
+                  <td>Delmonte, Joanna Rose L.</td>
+                  <td>2</td>
+                  <td><span class="status pending">Pending</span></td>
+                </tr>
+                <tr>
+                  <td>Lobendino, Joshua N.</td>
+                  <td>3</td>
+                  <td><span class="status late">Submitted</span></td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th colspan="3">Total: <span class="entries">40</span> entries</th>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+        </div>
+
+        <div class="card-inner-right">
+          <div class="tips-viewer">
+            <h3>Study Tips</h3>
+            <p>     Stay consistent, not perfect.<br>
+                    Take short breaks for focus.<br>
+                    Ask for help when needed.</p>
+          </div>
+        </div>
+    </main>
+  <script src="Adviser_Home.js"></script>
+</body>
+</html>
