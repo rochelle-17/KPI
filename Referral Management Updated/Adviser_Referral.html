@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Profile</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+    <link rel="stylesheet" href="Adviser_Referral.css">
+</head>
+<body>
+     <!-- Sidebar Navigation -->
+  <aside class="sidebar">
+    <div class="logo-container">
+      <div class="logo-icon">
+        <span class="material-symbols-outlined">home</span>
+      </div>
+      <div class="logo-text">
+        <div class="logo-title">Adviser Portal</div>
+        <div class="logo-subtitle">Management System</div>
+      </div>
+    </div>
+
+    <nav class="nav-menu">
+      <div class="nav-section-title">NAVIGATION</div>
+      <a href="Adviser_Home.html" class="nav-item">
+        <span class="material-symbols-outlined">home</span>
+        <div class="nav-text">
+          <div class="nav-title">Home</div>
+          <div class="nav-subtitle">Analytics and overview</div>
+        </div>
+      </a>
+      <a href="Adviser_Referral.html" class="nav-item">
+        <span class="material-symbols-outlined">article</span>
+        <div class="nav-text">
+          <div class="nav-title">Referrals</div>
+          <div class="nav-subtitle">Track and manage referrals</div>
+        </div>
+      </a>
+    </nav>
+  </aside>
+
+        <main class="main-content">
+            <header class="header">
+            <h1 class="page-title">Referrals</h1>
+            <div class="user-profile">
+              <div class="dropdown" id="profileDropdown">
+                  <img src="your-profile.jpg" 
+                       alt="User Profile" 
+                       class="profile-image account-icon" 
+                       id="profileButton">
+                  <div class="dropdown-content">
+                    <a href="#"><span class="material-symbols-outlined">manage_accounts</span>Profile Settings</a>
+                    <a href="#"><span class="material-symbols-outlined">logout</span>Logout</a>
+                  </div>
+                </div>
+            </div>
+          </header>
+    </header>
+
+    <section class="referral-list">
+                <div class="list-card">
+                <div class="list-header">
+                <h2>Referrals</h2>
+                <button class="btn-add">+ Add Walk-in Referral</button>
+                </div>
+
+            
+                <div class="list-filters">
+          <input type="text" id="searchInput" placeholder="Search students...">
+          <select id="gradeFilter">
+            <option value="all">All Levels</option>
+            <option value="elem">Elementary</option>
+            <option value="jhs">JHS</option>
+            <option value="shs">SHS</option>
+          </select>
+                </div>
+
+               <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>ID NUMBER</th>
+                                    <th>NAME</th>
+                                    <th>CONTACT NO.</th>
+                                    <th>GRADE</th>
+                                    <th>REFERRAL</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody id="studentTable">
+                                <tr>
+                                    <td>20221202</td>
+                                    <td>Calabucal, Jennylyn A.</td>
+                                    <td>09301750922</td>
+                                    <td>6</td>
+                                    <td><span class="status submitted">Submitted</span></td>
+                                    <td class="more"><span class="material-icons-outlined" onclick="toggleRowDropdown(this)">more_vert</span>
+                                        <div class="view">
+                                            <a href="#">View Details</a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>20221202</td>
+                                    <td>Calabucal, Jennylyn A.</td>
+                                    <td>09301750922</td>
+                                    <td>7</td>
+                                    <td><span class="status pending">Pending</span></td>
+                                    <td class="more"><span class="material-icons-outlined" onclick="toggleRowDropdown(this)">more_vert</span>
+                                        <div class="view">
+                                            <a href="#">View Details</a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>20221202</td>
+                                    <td>Calabucal, Jennylyn A.</td>
+                                    <td>09301750922</td>
+                                    <td>8</td>
+                                    <td><span class="status late">Late</span></td>
+                                    <td class="more"><span class="material-icons-outlined" onclick="toggleRowDropdown(this)">more_vert</span>
+                                        <div class="view">
+                                            <a href="#">View Details</a>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        </div>
+                      </div>
+
+
+                        <div id="referralPopup" class="popup-overlay">
+                          <div class="popup-box">
+                          <span class="close-btn" id="closeBtn">&times;</span>
+
+                          <h2>Referral Details</h2>
+
+                          <form id="referralForm" class="referral-form">
+                          <label>Last Name      
+                            <input type="text" name="lastName"   required>
+                          </label>
+                          <label>First Name     
+                            <input type="text" name="firstName"  required>
+                          </label>
+                          <label>Middle Name    
+                            <input type="text" name="middleName">
+                          </label>
+
+                          <div class="two-col">
+                            <label>Grade
+                              <select name="grade" required>
+                                <option value="" disabled selected>Select</option>
+                                <option>7</option><option>8</option><option>9</option>
+                                <option>10</option><option>11</option><option>12</option>
+                              </select>
+                            </label>
+                          <label>Section 
+                            <input type="text" name="section" required></label>
+                          </div>
+
+                          <label>Gender
+                            <select name="gender" required>
+                            <option value="" disabled selected>Select</option>
+                            <option>Male</option><option>Female</option><option>Other</option>
+                            </select>
+                            </label>
+
+                            <label>ID Number    
+                              <input type="text" name="idNumber"   required>
+                            </label>
+                              <label>Contact No.  
+                              <input type="tel"  name="contactNo"  required>
+                              </label>
+                            <label>Submitted By 
+                              <input type="text" name="submittedBy" required>
+                            </label>
+
+                            <label>Reason for Referral
+                              <textarea name="reason" required>
+                              </textarea>
+                            </label>
+
+                            <div class="actions">
+                            <button type="submit" class="save-btn">Save Referral</button>
+                            </div>
+                            </form>
+                          </div>
+                      </div>
+                </div>
+            </div>
+            </secion>
+        </main>
+      <script src="Adviser_Referral.js"></script>  
+    </div>
+</body>
+</html>
