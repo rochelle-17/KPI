@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Portal - Management System</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+    <link rel="stylesheet" href="Admin_Referral.css">
+</head>
+<body>
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+        <div class="logo-container">
+            <div class="logo-icon">
+                <span class="material-symbols-outlined">home</span>
+            </div>
+            <div class="logo-text">
+                <div class="logo-title">Admin Portal</div>
+                <div class="logo-subtitle">Management System</div>
+            </div>
+        </div>
+
+        <nav class="nav-menu">
+            <div class="nav-section-title">NAVIGATION</div>
+            <a href="Admin_Dashboard.html" class="nav-item active">
+                <span class="material-symbols-outlined">dashboard</span>
+                <div class="nav-text">
+                    <div class="nav-title">Dashboard</div>
+                    <div class="nav-subtitle">Analytics and overview</div>
+                </div>
+            </a>
+            <a href="Admin_StudentProfile.html" class="nav-item">
+                <span class="material-symbols-outlined">assignment_ind</span>
+                <div class="nav-text">
+                    <div class="nav-title">Student Profiles</div>
+                    <div class="nav-subtitle">Manage student data</div>
+                </div>
+            </a>
+            <a href="Admin_Referral.html" class="nav-item">
+                <span class="material-symbols-outlined">article</span>
+                <div class="nav-text">
+                    <div class="nav-title">Referrals</div>
+                    <div class="nav-subtitle">Track and manage referrals</div>
+                </div>
+            </a>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Header -->
+        <header class="header">
+            <h1 class="page-title">Dashboard</h1>
+            <div class="user-profile">
+              <div class="dropdown" id="profileDropdown">
+                  <img src="your-profile.jpg" 
+                       alt="User Profile" 
+                       class="profile-image account-icon" 
+                       id="profileButton">
+                  <div class="dropdown-content">
+                    <a href="Admin_ProfileSettings.html"><span class="material-symbols-outlined">manage_accounts</span>Profile Settings</a>
+                    <a href="#"><span class="material-symbols-outlined">logout</span>Logout</a>
+                  </div>
+                </div>
+            </div>
+          </header>
+    
+    <!-- Student List -->
+    <section class="student-list">
+      <div class="list-card">
+        <div class="list-header">
+
+          <div class="list-filters">
+            <input type="text" id="searchInput" placeholder="Search students...">
+            <select id="gradeFilter">
+              <option value="all">All Levels</option>
+              <option value="elem">Elementary</option>
+              <option value="jhs">JHS</option>
+              <option value="shs">SHS</option>
+            </select>
+          </div>
+
+          <button class="btn-add" id="addNewBtn">+ Add Walk-in Students</button>
+
+          <div id="referralPopup" class="popup-overlay">
+            <div class="popup-box">
+                <span class="close-btn" id="closeBtn">&times;</span>
+
+                  <h2>Referral Details</h2>
+
+                    <form id="referralForm" class="referral-form">
+                          <label>ID Number     
+                            <input type="text" name="idnumber"   required>
+                          </label>
+                          <label>Full Name      
+                            <input type="text" name="lastName"   required>
+                          </label>
+
+                          <div class="two-col">
+                            <label>Level
+                              <select name="level" required>
+                                <option value="" disabled selected>Select</option>
+                                <option>Elementary</option><option>JHS</option><option>SHS</option>
+                              </select>
+                            </label>
+                          <label>Grade
+                              <select name="grade" required>
+                                <option value="" disabled selected>Select</option>
+                                <option>1</option><option>2</option><option>3</option>
+                                <option>4</option><option>5</option><option>6</option>
+                                <option>7</option><option>8</option><option>9</option>
+                                <option>10</option><option>11</option><option>12</option>
+                              </select>
+                            </label>
+                          </div>
+
+                          <label>Contact Number  
+                            <input type="text" name="contactnumber">
+                          </label>
+
+                          <label>Age  
+                            <input type="text" name="contactnumber">
+                          </label>
+
+                          <label>Staff handling the case 
+                            <input type="text" name="contactnumber">
+                          </label>
+
+                          <label>Adviser 
+                            <input type="text" name="contactnumber">
+                          </label>
+
+                          <label>Reason for Referral
+                              <textarea name="reason" required>
+                              </textarea>
+                          </label>
+
+                            <div class="actions">
+                            <button type="submit" class="save-btn">Save Referral</button>
+                            </div>
+                    </form>
+              </div>
+        </div>
+
+        </div>
+      
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>ID #</th>
+                <th>Name</th>
+                <th>Level</th>
+                <th>Grade</th>
+                <th>Date Added</th>
+                <th>Submitted by</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody id="studentTable">
+              <tr>
+                <td>20221202</td>
+                <td>Calabucal, Jennylyn</td>
+                <td>JHS</td>
+                <td>10</td>
+                <td>2025-09-12</td>
+                <td>Garcia, Shirbenly</td>
+                <td><span class="status">Submitted</span></td>
+              </tr>
+              <tr>
+                <td>20221204</td>
+                <td>Cepeda, Rochelle Jane</td>
+                <td>Elementary</td>
+                <td>4</td>
+                <td>2025-04-26</td>
+                <td>Perez, Rubea</td>
+                <td><span class="status">Pending</span></td>
+              </tr>
+            </tbody>
+          </table>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Custom JS -->
+  <script src="Admin_StudentProfile.js"></script>
+</body>
+</html>

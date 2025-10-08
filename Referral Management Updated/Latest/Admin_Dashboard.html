@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Portal - Management System</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+    <link rel="stylesheet" href="Admin_Dashboard.css">
+</head>
+<body>
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+        <div class="logo-container">
+            <div class="logo-icon">
+                <span class="material-symbols-outlined">home</span>
+            </div>
+            <div class="logo-text">
+                <div class="logo-title">Admin Portal</div>
+                <div class="logo-subtitle">Management System</div>
+            </div>
+        </div>
+
+        <nav class="nav-menu">
+            <div class="nav-section-title">NAVIGATION</div>
+            <a href="Admin_Dashboard.html" class="nav-item active">
+                <span class="material-symbols-outlined">dashboard</span>
+                <div class="nav-text">
+                    <div class="nav-title">Dashboard</div>
+                    <div class="nav-subtitle">Analytics and overview</div>
+                </div>
+            </a>
+            <a href="Admin_StudentProfile.html" class="nav-item">
+                <span class="material-symbols-outlined">assignment_ind</span>
+                <div class="nav-text">
+                    <div class="nav-title">Student Profiles</div>
+                    <div class="nav-subtitle">Manage student data</div>
+                </div>
+            </a>
+            <a href="Admin_Referral.html" class="nav-item">
+                <span class="material-symbols-outlined">article</span>
+                <div class="nav-text">
+                    <div class="nav-title">Referrals</div>
+                    <div class="nav-subtitle">Track and manage referrals</div>
+                </div>
+            </a>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Header -->
+        <header class="header">
+            <h1 class="page-title">Dashboard</h1>
+            <div class="user-profile">
+              <div class="dropdown" id="profileDropdown">
+                  <img src="your-profile.jpg" 
+                       alt="User Profile" 
+                       class="profile-image account-icon" 
+                       id="profileButton">
+                  <div class="dropdown-content">
+                    <a href="Admin_ProfileSettings.html"><span class="material-symbols-outlined">manage_accounts</span>Profile Settings</a>
+                    <a href="#"><span class="material-symbols-outlined">logout</span>Logout</a>
+                  </div>
+                </div>
+            </div>
+          </header>
+
+
+        <!-- Dashboard Content -->
+        <div class="dashboard-content">
+            <div class="welcome-section">
+                <h2 class="welcome-title">Welcome back, Jennylyn Calabucal</h2>
+                <p class="welcome-subtitle">Here's an overview of your referral management system</p>
+            </div>
+
+            <!-- Stats Grid -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-label">Total Referrals</div>
+                    <div class="stat-value">0</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Elementary</div>
+                    <div class="stat-value">0</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Junior High School</div>
+                    <div class="stat-value">0</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Senior High School</div>
+                    <div class="stat-value">0</div>
+                </div>
+            </div>
+
+            
+
+            <!-- Recent Referrals Section with Filter Tabs -->
+            <div class="recent-referrals-section">
+                <h3 class="section-title">Recent Referrals</h3>
+                <div class="filter-tabs">
+                    <button class="filter-tab active" data-filter="all">All</button>
+                    <button class="filter-tab" data-filter="elementary">Elementary</button>
+                    <button class="filter-tab" data-filter="junior">Junior High School</button>
+                    <button class="filter-tab" data-filter="senior">Senior High School</button>
+                </div>
+                <div class="referrals-content">
+                    <p class="empty-state">No referrals to display</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="Admin_Dashboard.js"></script>
+</body>
+</html>
