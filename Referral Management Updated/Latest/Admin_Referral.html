@@ -52,140 +52,224 @@
         <header class="header">
             <h1 class="page-title">Referral</h1>
             <div class="user-profile">
-              <div class="dropdown" id="profileDropdown">
-                  <img src="your-profile.jpg" 
-                       alt="User Profile" 
-                       class="profile-image account-icon" 
-                       id="profileButton">
-                  <div class="dropdown-content">
-                    <a href="Admin_ProfileSettings.html"><span class="material-symbols-outlined">manage_accounts</span>Profile Settings</a>
-                    <a href="Login_Form.html"><span class="material-symbols-outlined">logout</span>Logout</a>
-                  </div>
+                <div class="dropdown" id="profileDropdown">
+                    <img src="your-profile.jpg" alt="User Profile" class="profile-image account-icon" id="profileButton">
+                    <div class="dropdown-content">
+                        <a href="Admin_ProfileSettings.html"><span class="material-symbols-outlined">manage_accounts</span>Profile Settings</a>
+                        <a href="Login_Form.html"><span class="material-symbols-outlined">logout</span>Logout</a>
+                    </div>
                 </div>
             </div>
-          </header>
+        </header>
     
-    <!-- Student List -->
-    <section class="student-list">
-      <div class="list-card">
-        <div class="list-header">
+        <!-- Student List -->
+        <section class="student-list">
+            <div class="list-card">
+                <div class="list-header">
+                    <div class="list-filters">
+                        <input type="text" id="searchInput" placeholder="Search students...">
+                        <select id="gradeFilter">
+                            <option value="all">All Levels</option>
+                            <option value="elem">Elementary</option>
+                            <option value="jhs">JHS</option>
+                            <option value="shs">SHS</option>
+                        </select>
+                    </div>
 
-          <div class="list-filters">
-            <input type="text" id="searchInput" placeholder="Search students...">
-            <select id="gradeFilter">
-              <option value="all">All Levels</option>
-              <option value="elem">Elementary</option>
-              <option value="jhs">JHS</option>
-              <option value="shs">SHS</option>
-            </select>
-          </div>
+                    <button class="btn-add" id="addNewBtn">+ Add Walk-in Students</button>
 
-          <button class="btn-add" id="addNewBtn">+ Add Walk-in Students</button>
+                    <!-- Existing Add Referral Form -->
+                    <div id="referralPopup" class="popup-overlay">
+                        <div class="popup-box">
+                            <span class="close-btn" id="closeBtn">&times;</span>
+                            <h2>Referral Details</h2>
+                            <form id="referralForm" class="referral-form">
+                                <label>ID Number     
+                                    <input type="text" name="idnumber" required>
+                                </label>
+                                <label>Full Name      
+                                    <input type="text" name="lastName" required>
+                                </label>
 
-          <div id="referralPopup" class="popup-overlay">
+                                <div class="two-col">
+                                    <label>Level
+                                        <select name="level" required>
+                                            <option value="" disabled selected>Select</option>
+                                            <option>Elementary</option><option>JHS</option><option>SHS</option>
+                                        </select>
+                                    </label>
+                                    <label>Grade
+                                        <select name="grade" required>
+                                            <option value="" disabled selected>Select</option>
+                                            <option>1</option><option>2</option><option>3</option>
+                                            <option>4</option><option>5</option><option>6</option>
+                                            <option>7</option><option>8</option><option>9</option>
+                                            <option>10</option><option>11</option><option>12</option>
+                                        </select>
+                                    </label>
+                                </div>
+
+                                <label>Contact Number  
+                                    <input type="text" name="contactnumber">
+                                </label>
+
+                                <label>Age  
+                                    <input type="text" name="age">
+                                </label>
+
+                                <label>Staff handling the case 
+                                    <input type="text" name="staff">
+                                </label>
+
+                                <label>Adviser 
+                                    <input type="text" name="adviser">
+                                </label>
+
+                                <label>Reason for Referral
+                                    <textarea name="reason" required></textarea>
+                                </label>
+
+                                <div class="actions">
+                                    <button type="submit" class="save-btn">Save Referral</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Table of Students -->
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID #</th>
+                                <th>Name</th>
+                                <th>Level</th>
+                                <th>Grade</th>
+                                <th>Date Added</th>
+                                <th>Submitted by</th>
+                                <th>Actions</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="studentTable">
+                            <tr>
+                                <td>20221202</td>
+                                <td>Calabucal, Jennylyn</td>
+                                <td>JHS</td>
+                                <td>10</td>
+                                <td>2025-09-12</td>
+                                <td>Garcia, Shirbenly</td>
+                                <td><button class="btn-view-referral">Action</button></td>
+                                <td><button class="btn-view-appointment">Counseling</button></td>
+                            </tr>
+                            <tr>
+                                <td>20221204</td>
+                                <td>Cepeda, Rochelle Jane</td>
+                                <td>Elementary</td>
+                                <td>4</td>
+                                <td>2025-04-26</td>
+                                <td>Perez, Rubea</td>
+                                <td><button class="btn-view-referral">Action</button></td>
+                                <td><button class="btn-view-appointment">Counseling</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Referral Details Popup -->
+        <div id="popup-referral-details" class="popup-overlay">
             <div class="popup-box">
-                <span class="close-btn" id="closeBtn">&times;</span>
-
-                  <h2>Referral Details</h2>
-
-                    <form id="referralForm" class="referral-form">
-                          <label>ID Number     
-                            <input type="text" name="idnumber"   required>
-                          </label>
-                          <label>Full Name      
-                            <input type="text" name="lastName"   required>
-                          </label>
-
-                          <div class="two-col">
-                            <label>Level
-                              <select name="level" required>
-                                <option value="" disabled selected>Select</option>
-                                <option>Elementary</option><option>JHS</option><option>SHS</option>
-                              </select>
-                            </label>
-                          <label>Grade
-                              <select name="grade" required>
-                                <option value="" disabled selected>Select</option>
-                                <option>1</option><option>2</option><option>3</option>
-                                <option>4</option><option>5</option><option>6</option>
-                                <option>7</option><option>8</option><option>9</option>
-                                <option>10</option><option>11</option><option>12</option>
-                              </select>
-                            </label>
-                          </div>
-
-                          <label>Contact Number  
-                            <input type="text" name="contactnumber">
-                          </label>
-
-                          <label>Age  
-                            <input type="text" name="contactnumber">
-                          </label>
-
-                          <label>Staff handling the case 
-                            <input type="text" name="contactnumber">
-                          </label>
-
-                          <label>Adviser 
-                            <input type="text" name="contactnumber">
-                          </label>
-
-                          <label>Reason for Referral
-                              <textarea name="reason" required>
-                              </textarea>
-                          </label>
-
-                            <div class="actions">
-                            <button type="submit" class="save-btn">Save Referral</button>
-                            </div>
-                    </form>
-              </div>
+                <span class="btn-close close-referral">&times;</span>
+                <h2>Referral Details</h2>
+                <div class="referral-info">
+                    <p><strong>ID:</strong> <span class="info-id"></span></p>
+                    <p><strong>Name:</strong> <span class="info-name"></span></p>
+                    <p><strong>Level:</strong> <span class="info-level"></span></p>
+                    <p><strong>Grade:</strong> <span class="info-grade"></span></p>
+                    <p><strong>Date Added:</strong> <span class="info-date"></span></p>
+                    <p><strong>Submitted By:</strong> <span class="info-submitted"></span></p>
+                    <p><strong>Reason of Referral:</strong></p>
+                    <textarea class="info-reason" readonly>Struggling academically and often distracted in class.</textarea>
+                </div>
+                <button class="btn-proceed">Proceed</button>
+            </div>
         </div>
 
-        </div>
-      
-        <div class="table-container">
-          <table>
-            <thead>
-              <tr>
-                <th>ID #</th>
-                <th>Name</th>
-                <th>Level</th>
-                <th>Grade</th>
-                <th>Date Added</th>
-                <th>Submitted by</th>
-                <th>Status</th>
-              </tr>
-            </thead>
-            <tbody id="studentTable">
-              <tr>
-                <td>20221202</td>
-                <td>Calabucal, Jennylyn</td>
-                <td>JHS</td>
-                <td>10</td>
-                <td>2025-09-12</td>
-                <td>Garcia, Shirbenly</td>
-                <td><span class="status">Submitted</span></td>
-              </tr>
-              <tr>
-                <td>20221204</td>
-                <td>Cepeda, Rochelle Jane</td>
-                <td>Elementary</td>
-                <td>4</td>
-                <td>2025-04-26</td>
-                <td>Perez, Rubea</td>
-                <td><span class="status">Pending</span></td>
-              </tr>
-            </tbody>
-          </table>
+        <!-- Appointment Popup -->
+        <div id="popup-appointment" class="popup-overlay">
+            <div class="popup-box">
+                <span class="btn-close close-appointment">&times;</span>
+                <h2>Set Appointment</h2>
+                <form id="form-appointment">
+                    <label for="appointment-date">Date:</label>
+                    <input type="date" id="appointment-date" required>
 
+                    <label for="appointment-time">Time:</label>
+                    <input type="time" id="appointment-time" required>
+
+                    <button type="submit" class="btn-save">Save Appointment</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Interview Counseling Form Popup -->
+      <div id="popup-counseling" class="popup-overlay">
+        <div class="popup-box">
+          <span class="close-counseling">&times;</span>
+          <h2>Interview Counseling Form</h2>
+        
+          <form id="counselingForm">
+            <!-- Student Information -->
+            <label>Student Name:</label>
+            <input type="text" id="student_name" name="student_name" readonly>
+
+            <label>Student ID:</label>
+            <input type="text" id="studentID" name="studentID" readonly>
+          
+            <label>Level & Grade:</label>
+            <input type="text" id="level_grade" name="level_grade" readonly>
+          
+            <label>Date of Interview:</label>
+            <input type="date" id="counseling_date" name="counseling_date" required>
+          
+            <label>Reason for Referral / Interview:</label>
+            <textarea id="referral_reason" name="referral_reason" rows="3" readonly></textarea>
+          
+            <!-- New Fields for Interview Counseling -->
+            <label>Type of Counseling:</label>
+            <select id="counseling_type" name="counseling_type" required>
+              <option value="">-- Select Type --</option>
+              <option value="Initial Interview">Initial Interview</option>
+              <option value="Follow-up Session">Follow-up Session</option>
+              <option value="Academic Counseling">Academic Counseling</option>
+              <option value="Behavioral Counseling">Behavioral Counseling</option>
+              <option value="Personal/Social Counseling">Personal/Social Counseling</option>
+            </select>
+          
+            <label>Findings / Observations:</label>
+            <textarea id="findings" name="findings" rows="4" placeholder="Write findings or observations here..."></textarea>
+          
+            <label>Intervention / Recommendations:</label>
+            <textarea id="intervention" name="intervention" rows="4" placeholder="Write recommended interventions or actions..."></textarea>
+          
+            <label>Counselor / Interviewer:</label>
+            <input type="text" id="counselor_name" name="counselor_name" placeholder="Enter counselor/interviewer name" required>
+          
+            <!-- Buttons -->
+            <div class="popup-buttons">
+              <button type="submit" class="btn-save">Save</button>
+              <button type="button" class="btn-close close-counseling">Close</button>
+            </div>
+          </form>
         </div>
       </div>
-    </section>
 
-  </main>
+    </main>
 
-  <!-- Custom JS -->
-  <script src="Admin_StudentProfile.js"></script>
+    <!-- Custom JS -->
+    <script src="Admin_Referral.js"></script>
 </body>
 </html>
