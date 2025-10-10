@@ -324,6 +324,7 @@ table {
   border-radius: 8px;
   overflow: hidden;
   table-layout: auto;
+  cursor: pointer;
 }
 
 thead {
@@ -371,6 +372,13 @@ tr:hover {
   visibility: hidden;
   transition: opacity .3s, visibility .3s;
   z-index: 1000;
+}
+
+.popup-overlay h2 {
+  font-size: 25px;
+  color: white;
+  margin: -5px 0 20px 0;
+  font-weight: 700;
 }
 
 .popup-overlay.show {

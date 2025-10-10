@@ -335,6 +335,7 @@ table {
   border-collapse: collapse;
   border-radius: 8px;
   overflow: hidden;
+  cursor: pointer;
 }
 
 thead {
@@ -366,6 +367,13 @@ tr:nth-child(even) {
   z-index: 1000;
 }
 
+.popup-overlay h2 {
+  font-size: 25px;
+  color: white;
+  margin: -5px 0 20px 0;
+  font-weight: 700;
+}
+
 .popup-overlay.show {
   opacity: 1;
   visibility: visible;
@@ -395,6 +403,7 @@ tr:nth-child(even) {
 .close-btn:hover {
   color: #10b981;
 }
+
 
 /* Form Styles */
 .referral-form label {
