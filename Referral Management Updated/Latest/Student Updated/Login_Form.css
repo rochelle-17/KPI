@@ -1,0 +1,236 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Background */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #0d1f0d;
+  background-image:
+    linear-gradient(to right, rgba(34, 197, 94, 0.1) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(34, 197, 94, 0.1) 1px, transparent 1px);
+  background-size: 4rem 4rem;
+  font-family: "Nunito Sans", sans-serif;
+  animation: backgroundPan 40s linear infinite;
+}
+
+/* Form Wrapper */
+.wrapper {
+  width: 430px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  padding: 30px 25px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 0.8s ease-in-out, floatUpDown 6s ease-in-out infinite;
+  color: #e5ffe5;
+}
+
+/* Title */
+.wrapper h1 {
+  margin-bottom: 25px;
+  font-size: 35px;
+  text-align: center;
+  font-family: "Space Grotesk", sans-serif;
+  color: #22c55e;
+  animation: fadeSlide 0.8s ease-in-out forwards;
+}
+
+/* Input Boxes */
+.wrapper .input-box {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  margin: 18px 0;
+  opacity: 0;
+  transform: translateY(15px);
+  animation: fadeSlide 0.6s ease forwards;
+}
+
+.input-box:nth-child(2) { animation-delay: 0.4s; }
+.input-box:nth-child(3) { animation-delay: 0.6s; }
+
+.input-box input {
+  width: 100%;
+  height: 100%;
+  border: 1px solid #22c55e;
+  border-radius: 40px;
+  padding: 0 20px;
+  font-size: 15px;
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Input Hover + Focus */
+.input-box input:hover {
+  border-color: #22c55e;
+  box-shadow: 0 0 6px rgba(34, 197, 94, 0.3);
+}
+
+.input-box input:focus {
+  outline: none;
+  border-color: #22c55e;
+  box-shadow: 0 0 10px rgba(34, 197, 94, 0.4);
+}
+
+/* Placeholder */
+.input-box input::placeholder {
+  color: #aef1ae;
+  font-size: 14px;
+  transition: 0.3s ease;
+}
+
+/* Remember + Forgot */
+.wrapper .remember-forgot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 15px 5px 25px;
+  font-size: 14px;
+  animation: fadeSlide 0.6s ease forwards;
+  animation-delay: 0.8s;
+  opacity: 0;
+}
+
+.remember-forgot label {
+  color: #aef1ae;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.remember-forgot input[type="checkbox"] {
+  accent-color: #22c55e;
+}
+
+.remember-forgot a {
+  color: #22c55e;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.remember-forgot a:hover {
+  text-decoration: underline;
+  color: #16a34a;
+}
+
+/* Button */
+.wrapper button {
+  width: 100%;
+  height: 50px;
+  background-color: #22c55e;
+  color: #0d1f0d;
+  border: none;
+  border-radius: 40px;
+  font-weight: 700;
+  font-size: 20px;
+  cursor: pointer;
+  display: block;
+  margin: 15px auto;
+  transition: all 0.3s ease-in-out;
+  animation: fadeSlide 0.6s ease forwards;
+  animation-delay: 1s;
+  opacity: 0;
+}
+
+/* Button Hover + Press */
+.wrapper button:hover {
+  background-color: #16a34a;
+  color: white;
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(34, 197, 94, 0.3);
+}
+
+.wrapper button:active {
+  transform: scale(0.95);
+}
+
+/* Animations */
+@keyframes fadeSlide {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes floatUpDown {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+@keyframes backgroundPan {
+  0% { background-position: 0 0; }
+  100% { background-position: 200px 200px; }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .wrapper {
+    width: 90%;
+    padding: 25px 20px;
+  }
+
+  .wrapper h1 {
+    font-size: 28px;
+  }
+
+  .input-box input {
+    font-size: 14px;
+    padding: 0 15px;
+  }
+
+  .wrapper button {
+    font-size: 18px;
+    height: 45px;
+  }
+
+  .remember-forgot {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 10px;
+  }
+
+  .wrapper {
+    width: 100%;
+    border-radius: 10px;
+    padding: 20px 15px;
+  }
+
+  .wrapper h1 {
+    font-size: 24px;
+  }
+
+  .input-box {
+    height: 45px;
+    margin: 15px 0;
+  }
+
+  .input-box input {
+    font-size: 13px;
+  }
+
+  .wrapper button {
+    font-size: 16px;
+    height: 45px;
+  }
+
+  .logo img {
+    width: 60px;
+  }
+
+  .remember-forgot {
+    font-size: 13px;
+    align-items: flex-start;
+  }
+}
