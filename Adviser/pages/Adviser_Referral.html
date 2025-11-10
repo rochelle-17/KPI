@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adviser Portal - Management System</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+    <link rel="stylesheet" href="Adviser_Referral.css">
+    <link rel="stylesheet" href="/assets/css/custom-alert.css">
+</head>
+<body>
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+        <div class="logo-container">
+            <div class="logo-icon">
+                <span class="material-symbols-outlined">home</span>
+            </div>
+            <div class="logo-text">
+                <div class="logo-title">Adviser Referral</div>
+                <div class="logo-subtitle">Management System</div>
+            </div>
+        </div>
+
+        <nav class="nav-menu">
+            <div class="nav-section-title">NAVIGATION</div>
+            <a href="Adviser_Home.html" class="nav-item">
+                <span class="material-symbols-outlined">home</span>
+                <div class="nav-text">
+                    <div class="nav-title">Home</div>
+                    <div class="nav-subtitle">Overview lists and Procedures</div>
+                </div>
+            </a>
+            <a href="Adviser_StudentProfile.html" class="nav-item">
+                <span class="material-symbols-outlined">assignment_ind</span>
+                <div class="nav-text">
+                    <div class="nav-title">Student Profiles</div>
+                    <div class="nav-subtitle">Manage student data</div>
+                </div>
+            </a>
+            <a href="Adviser_Referral.html" class="nav-item active">
+                <span class="material-symbols-outlined">article</span>
+                <div class="nav-text">
+                    <div class="nav-title">Referrals</div>
+                    <div class="nav-subtitle">Track and manage referrals</div>
+                </div>
+            </a>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Header -->
+        <header class="header">
+            <h1 class="page-title">Referral</h1>
+            <div class="user-profile">
+                <div class="dropdown" id="profileDropdown">
+                    <img src="your-profile.jpg" alt="User Profile" class="profile-image account-icon" id="profileButton">
+                    <div class="dropdown-content">
+                        <a href="Adviser_ProfileSettings.html"><span class="material-symbols-outlined">manage_accounts</span>Profile Settings</a>
+                        <a href="Login_Form.html"><span class="material-symbols-outlined">logout</span>Logout</a>
+                    </div>
+                </div>
+            </div>
+        </header>
+    
+        <!-- Student List -->
+        <section class="student-list">
+            <div class="list-card">
+                <div class="list-header">
+                    <div class="list-filters">
+                        <input type="text" id="searchInput" placeholder="Search students...">
+                        <button class="filter-tab active" data-filter="all">All</button>
+                        <button class="filter-tab" data-filter="pending">Pending</button>
+                        <button class="filter-tab" data-filter="complete">Complete</button>
+                    </div>
+
+                    <button class="btn-add" id="addNewBtn">+ Add Referral</button>
+
+                    <!-- Add Referral Form Popup -->
+                    <div id="referralPopup" class="popup-overlay">
+                        <div class="popup-box">
+                            <span class="close-btn" id="closeBtn">&times;</span>
+                            <h2>Referral Form</h2>
+                            <form id="referralForm" class="referral-form">
+                                <label>Student ID Number     
+                                    <input type="text" name="idnumber" required minlength="1">
+                                </label>
+
+                                <div class="two-col">
+                                    <label>First Name      
+                                        <input type="text" name="firstName" required minlength="2">
+                                    </label>
+                                    <label>Middle Name      
+                                        <input type="text" name="middleName" required minlength="2">
+                                    </label>
+                                </div>
+
+                                <label>Last Name      
+                                    <input type="text" name="lastName" required minlength="2">
+                                </label>
+
+                                <div class="two-col">
+                                    <label>Level
+                                        <select name="level" required>
+                                            <option value="" disabled selected>Select Level</option>
+                                            <option>Elementary</option>
+                                            <option>High School</option>
+                                            <option>Senior High School</option>
+                                        </select>
+                                    </label>
+                                    <label>Grade
+                                        <select name="grade" required>
+                                            <option value="" disabled selected>Select Grade</option>
+                                        </select>
+                                    </label>
+                                </div>
+
+                                <label>Age  
+                                    <input type="number" name="age" required min="1">
+                                </label>
+
+                                <label>Contact Number  
+                                    <input type="text" name="contactnumber" required>
+                                </label>
+
+                                <label>Adviser 
+                                    <input type="text" name="adviser" required>
+                                </label>
+
+                                <label>Staff Handling the Case 
+                                    <input type="text" name="staff" required>
+                                </label>
+
+                                <label>Reason for Referral
+                                    <textarea name="reason" required minlength="10"></textarea>
+                                </label>
+
+                                <div class="actions">
+                                    <button type="submit" class="save-btn">Submit Referral</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Table of Students -->
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID #</th>
+                                <th>Name</th>
+                                <th>Date Added</th>
+                                <th>Submitted by</th>
+                                <th>Concern</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="studentTable">
+                            <!-- Data will be populated by JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Custom JS -->
+    <script src="Adviser_Referral.js"></script>
+    <script src="/api/api-client.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <script src="/js/logout.js"></script>
+    <script src="/assets/js/custom-alert.js"></script>
+</body>
+</html>
